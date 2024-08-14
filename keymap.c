@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |   `  |   !  |   @  |   #  |   $  |   %  |-------.    ,-------|   ^  |   &  |   *  |   (  |   )  |   ~  |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|   <  |   >  |   *  |   {  |   }  |  |\  |
+ * |      |      |      |      |      |      |-------|    |-------|   <  |   >  |   |  |   ~  |   }  |  \   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |LOWER | /       /       \      \  |RAISE |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MRWD, KC_MFFD,           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_DEL,
   KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,                       KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,
   KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,               KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_NONUS_HASH,
-  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,     KC_NUBS, LSFT(KC_NUBS), LSFT(KC_8), KC_LCBR, KC_RCBR, KC_NONUS_BACKSLASH,
+  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,     KC_NUBS, LSFT(KC_NUBS), RALT(KC_NUBS), RALT(KC_EQL), KC_RCBR, ALGR(KC_MINUS),
   KC_NO, KC_NO, KC_TRNS, KC_NO,                                   KC_NO, KC_TRNS, KC_NO, KC_NO
 ),
 
@@ -147,7 +147,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void render_logo(void) {
 	static const char PROGMEM my_logo[] = {
-    // 128x32 custom logo
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80, 0x80, 
